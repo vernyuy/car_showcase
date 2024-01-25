@@ -1,7 +1,7 @@
 import { relative } from "path";
 import "./globals.css";
 import type { Metadata } from "next";
-import { Navbar, Footer } from "@/componentsCised";
+import { Navbar, Footer } from "@/components";
 
 export const metadata: Metadata = {
   title: "Create Next App",

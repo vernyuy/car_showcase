@@ -14,7 +14,7 @@ const CustomButton = ({
     <button
       disabled={false}
       type={btnType || "button"}
-      className={`${containerStyles}`}
+      className={`custom-btn ${containerStyles}`}
       onClick={handleClick}
     >
       <span className={`flex-1 ${textStyles}`}>{title}</span>

@@ -1,16 +1,45 @@
-import { Hero, About } from "@/components";
-// import { fetchCars } from "@/utils";
+import { Hero, SearchBar, CustomFilter, CarCard } from "@/components";
+import { fetchCars } from "@/utils";
 import Image from "next/image";
 
 export default async function Page() {
-  // const allCars = await fetchCars();
-  // console.log(allCars);
-  // const isDataEmpty = !Array.isArray(allCars) || allCars.length < 1 || !allCars;
+  const allCars = await fetchCars();
+  console.log(allCars);
+  const isDataEmpty = !Array.isArray(allCars) || allCars.length < 1 || !allCars;
   return (
-    <main className="overflow-x-hidden">
+    <main className="overflow-hidden">
       <Hero />
-      <About />
-      <div className="h-screen text-black bg-red-500">jo apoj pojs</div>
+
+      <div className="mt-12 padding-x padding-y max-width" id="discover">
+        <div className="home__text-container">
+          <h1 className="text-4xl font-extrabold">Car Catalogue</h1>
+
+          <p>Explore the cars you might like</p>
+
+          <div className="home__filters">
+            <SearchBar />
+
+            <div className="home__filter-container">
+              <CustomFilter title="fuel" />
+              <CustomFilter title="Year" />
+            </div>
+          </div>
+          {!isDataEmpty ? (
+            <section>
+              <div className="home__cars-wrapper">
+                {allCars?.map((car) => (
+                  <CarCard car={car} />
+                ))}
+              </div>
+            </section>
+          ) : (
+            <div className="home__error-container">
+              <h2 className="text-black text-xl font-bold">Oops no cars</h2>
+              <p>{allCars.message}</p>
+            </div>
+          )}
+        </div>
+      </div>
     </main>
   );
 }

@@ -1,30 +1,29 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { cisedFooterLinks } from "@/constants";
+import { footerLinks } from "@/constants";
 const Footer = () => {
   return (
-    <footer className="flex flex-col text-[#01000b] mt- border-t border-[#01000b]">
+    <footer className="flex flex-col text-black-100 mt-5 border-t border-gray-100">
       <div
         className="flex max-md:flex-col flex-wrap
-           justify-between gap-5 px-6 py-2 sm:px-10"
+           justify-between gap-5 px-6 py-10 sm:px-16"
       >
         <div className="flex flex-col justify-start items-start gap-6">
           <Image
-            src="/cised-logo.png"
+            src="/logo.svg"
             alt="logo"
-            width={100}
-            height={50}
+            width={118}
+            height={18}
             className="object-contain"
           />
-          <p className="text-base text-[#01000b]">
-            CISED 2023 <br /> All rights reserved &copy;
+          <p className="text-base text-gray-700">
+            CarHub 2023 <br /> All rights reserved &copy;
           </p>
         </div>
-        {/* footer__links */}
 
-        <div className=" flex">
-          {cisedFooterLinks.map((link) => (
+        <div className="footer__links">
+          {footerLinks.map((link) => (
             <div key={link.title} className="footer__link">
               <h3 className="font-bold">{link.title}</h3>
 
@@ -32,21 +31,9 @@ const Footer = () => {
                 <Link
                   key={link.title}
                   href={link.url}
-                  className="text-[#01000b]"
+                  className="text-gray-500"
                 >
-                  <div className="flex gap-2 hover:text-[#01000b] hover:underline">
-                    {link.icon ? (
-                      <Image
-                        src={link.icon}
-                        height={20}
-                        width={20}
-                        alt="icon"
-                      />
-                    ) : (
-                      <div></div>
-                    )}
-                    <p className="text-[14px]">{link.title}</p>
-                  </div>
+                  {link.title}
                 </Link>
               ))}
             </div>
@@ -54,13 +41,13 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="flex items-center flex-wrap mt-10 bg-[#01000b] text-white border-gray-100 justify-between sm:px-16 px-6 py-3">
-        <p>@2023 CISED All rights reserved</p>
+      <div className="flex items-center flex-wrap mt-10 border-t border-gray-100 justify-between sm:px-16 px-6 py-10">
+        <p>@2023 Carhub All rights reserved</p>
         <div className="footer__copyrights-link">
-          <Link href="/" className="text-white">
+          <Link href="/" className="text-gray-500">
             Privacy Policy
           </Link>
-          <Link href="/home" className="text-white">
+          <Link href="/home" className="text-gray-500">
             Terms of use
           </Link>
         </div>

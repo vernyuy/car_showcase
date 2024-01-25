@@ -20,8 +20,8 @@ export default async function Page() {
             <SearchBar />
 
             <div className="home__filter-container">
-              <CustomFilter title="fuel" />
-              <CustomFilter title="Year" />
+              {/* <CustomFilter title="fuel" />
+              <CustomFilter title="Year" /> */}
             </div>
           </div>
           {!isDataEmpty ? (

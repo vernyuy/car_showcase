@@ -1,9 +1,12 @@
+"use client";
+
 import React from "react";
+
+import { useState } from "react";
 import Image from "next/image";
 import CustomButton from "./CustomButton";
 import Link from "next/link";
 const Navbar = () => {
-
   const [menu, setMenu] = useState(false);
   return (
     <div className="w-full px-8 py-4 bg-white">
@@ -90,7 +93,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-function useState(arg0: boolean): [any, any] {
-  throw new Error("Function not implemented.");
-}
-

@@ -9,9 +9,9 @@ import Link from "next/link";
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
   return (
-    <div className="w-full px-8 py-4 bg-white">
+    <div className="w-full px-8 py-4">
       <header>
-        <nav className="flex justify-between gap-2 sm:gap-0 md:gap-2 bg-white text-black">
+        <nav className="flex justify-between gap-2 sm:gap-0 md:gap-2  text-black">
           <div className="flex items-center">
             <Image
               src="https://car-showcase-tawny-one.vercel.app/logo.svg"

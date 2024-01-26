@@ -9,7 +9,7 @@ import Link from "next/link";
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
   return (
-    <div className="w-full px-8 py-4">
+    <div className="w-full px-8 py-4 bg-transparent">
       <header>
         <nav className="flex justify-between gap-2 sm:gap-0 md:gap-2  text-black">
           <div className="flex items-center">
@@ -22,7 +22,7 @@ const Navbar = () => {
             />
           </div>
           <div
-            className={`sm:relative duration-1000 sm:min-h-fit sm:w-auto absolute top-[10%] left-0 w-full bg-white flex items-center px-8 ${
+            className={`sm:relative z-20 bg-white sm:bg-transparent sm:z-0 duration-1000 sm:min-h-fit sm:w-auto absolute top-[10%] left-0 w-full flex items-center px-8 ${
               menu ? " block" : "hidden sm:block"
             }`}
           >
